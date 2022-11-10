@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     initial = True
-
+    data = 'date published'
     dependencies = [
     ]
 
@@ -35,11 +35,11 @@ class Migration(migrations.Migration):
                 ('distance', models.IntegerField(default=0)),
                 ('coach', models.CharField(max_length=100)),
                 ('fare', models.FloatField(blank=True, null=True)),
-                ('arrival_time', models.DateTimeField(verbose_name='date published')),
-                ('departure_time', models.DateTimeField(verbose_name='date published')),
+                ('arrival_time', models.DateTimeField(verbose_name=data)),
+                ('departure_time', models.DateTimeField(verbose_name=data)),
                 ('seat_no', models.IntegerField(default=0)),
                 ('name', models.CharField(max_length=100)),
-                ('date', models.DateTimeField(verbose_name='date published')),
+                ('date', models.DateTimeField(verbose_name=data)),
             ],
         ),
         migrations.CreateModel(
@@ -51,8 +51,8 @@ class Migration(migrations.Migration):
                 ('source', models.CharField(max_length=100)),
                 ('destination', models.CharField(max_length=100)),
                 ('distance', models.IntegerField(default=0)),
-                ('arrival_time', models.DateTimeField(verbose_name='date published')),
-                ('departure_time', models.DateTimeField(verbose_name='date published')),
+                ('arrival_time', models.DateTimeField(verbose_name=data)),
+                ('departure_time', models.DateTimeField(verbose_name=data)),
             ],
         ),
     ]

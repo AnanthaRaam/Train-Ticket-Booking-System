@@ -60,7 +60,6 @@ def register(request):
         else:
             print('Password not matching..')
             return redirect('register')
-        return redirect('/')
     else:
         return render(request,'register.html')
 

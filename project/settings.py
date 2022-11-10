@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '^4*ozg3#c&-l+ucm+31!w&gu_o5)-jps#_l#o@ey9qj4rdcnd='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ttbs1',
         'USER': 'postgres',
-        'PASSWORD': '12345',
+        'PASSWORD': os.getenv('password'),        
         'HOST': 'localhost' 
     }
 }
@@ -126,5 +126,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'project/static')
 ]
-#MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-#MEDIA_URL = '/media/'

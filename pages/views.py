@@ -11,6 +11,7 @@ def details(request):
         is_return = request.GET['i']
     except:
         is_return = 'No'
+        raise('No')
 
     trains = get_list_or_404(Train, source=source, destination=destination)
 
@@ -18,12 +19,10 @@ def details(request):
 
 
 def index(request):
-    #books=Book()
     trains = Train()
     tickets = Ticket()
     coaches = Coach()
 
-   # return render(request,'pages/index.html',{'books':books})
 
     return render(request,'pages/index.html',{'trains':trains , 'tickets':tickets, 'coaches':coaches})
 
